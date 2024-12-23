@@ -18,6 +18,8 @@ public class UpdateStudentController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		//Parameters to fetch values for parameters that are need to be updated
+		
 		int id = Integer.parseInt(req.getParameter("id"));
 		
 		String firstName = req.getParameter("firstName");
@@ -38,12 +40,16 @@ public class UpdateStudentController extends HttpServlet {
 
 		String address = req.getParameter("address");
 
+		//creating object of student and passing values to he parameter sing edit form data
+		
 		Student student = new Student(id,firstName, lastName, nickName, email, password, LocalDate.parse(dob), mobile,
 				gender, address);
+		
+		//creating object of StudentDao class and calling the function whle passing the above value student
 		new StudentDao().updateStudentDao(student);
 		
+		//if above process is completed then display.jsp file will be processed and display page will be shown
 		resp.sendRedirect("display.jsp");
 		
-
 	}
 }
