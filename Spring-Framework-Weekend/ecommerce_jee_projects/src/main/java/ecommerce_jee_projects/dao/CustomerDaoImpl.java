@@ -24,7 +24,6 @@ public class CustomerDaoImpl implements CustomerDao{
 			
 			PreparedStatement ps = connection.prepareStatement(Customer_Register_Query);
 			
-			
 			ps.setString(1, customer.getCustomerName());	
 			ps.setString(2, customer.getCustomerEmail());
 			ps.setString(3, customer.getCustomerPassword());

@@ -27,7 +27,7 @@ public class RegisterCustomerController {
 		byte[] image1 = stream.readAllBytes();
 		
 		Customer cusomer1 = new Customer(name,email,password,image1);
-		
+		==
 		//CustomerDao2 customerDao = new CustomerDaoImpl();
 		
 		//Customer customer2 = customerDao.registerCustomerDao(cusomer1);
